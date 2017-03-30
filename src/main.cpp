@@ -37,6 +37,12 @@ static void GDisplayHelp(void);
 int main(int argn,const char *argv[])
 	{
 	MCommandArg args(argn,argv);
+	if(args.CheckRemoveHelp()==true)
+		{
+		GDisplayHelp();
+		return 0;
+		}
+
 	if(args.CheckRemoveArg("-gpl")==true)
 		{
 		MLicenseGPL license(true);
